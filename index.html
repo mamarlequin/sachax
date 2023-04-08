@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" name ="viewport"content="width=device-width, initial-scale=1.0">
     <title>convertion Sacha Iphones</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hypodrome.css">
 </head>
 <body>
     <fieldset class ="Champ_de_texte">
@@ -28,54 +28,35 @@
     </fieldset>
     <input type ="button" value="convertir" id="convertion" onclick="calcul()" class="Boutton"/>
     <script type= "text/javascript">
+        function calcul_1(taille_c){
+            var nb2 = document.getElementById('choix2').value;
+            if(nb2 == "Sacha1"){
+                const taille_fin = taille_c / 156.5;
+                alert(taille_fin);
+            }
+            else if(nb2 == "Iphone1"){
+                let taille_fin = taille_c / 14.6;
+                alert(taille_fin);
+            }
+            else{
+                let taille_fin = taille_c / 1;
+                alert(taille_fin);
+            }
+        }
         function calcul(){
             const taille = document.getElementById("nb1").value;
             var nb1 = document.getElementById('choix1').value;
-            var nb2 = document.getElementById('choix2').value;
             if(nb1 == "Sacha1"){
                 const taille_cm = taille * 156.5;
-                if(nb2 == "Sacha1"){
-                    const taille_fin = taille_cm / 156.5;
-                    alert(taille_fin);
-                }
-                else if(nb2 == "Iphone1"){
-                    let taille_fin = taille_cm / 14.6;
-                    alert(taille_fin);
-                }
-                else{
-                    let taille_fin = taille_cm / 1;
-                    alert(taille_fin);
-                }
+                calcul_1(taille_cm);
                 }
             else if(nb1 == "Iphone1"){
                 const taille_cm = taille * 14.6;
-                if(nb2 == "Sacha1"){
-                    const taille_fin = taille_cm / 156.5;
-                    alert(taille_fin);
-                }
-                else if(nb2 == "Iphone1"){
-                    let taille_fin = taille_cm / 14.6;
-                    alert(taille_fin);
-                }
-                else{
-                    let taille_fin = taille_cm / 1;
-                    alert(taille_fin);
-                    }
+                calcul_1(taille_cm);
                 }
                 else{
                     const taille_cm = taille;
-                    if(nb2 == "Sacha1"){
-                        const taille_fin = taille_cm / 156.5;
-                        alert(taille_fin);
-                    }
-                    else if(nb2 == "Iphone1"){
-                        let taille_fin = taille_cm / 14.6;
-                        alert(taille_fin);
-                    }
-                    else{
-                        let taille_fin = taille_cm / 1;
-                        alert(taille_fin);
-                    }
+                    calcul_1(taille_cm);
                 }
             }
         </script>
