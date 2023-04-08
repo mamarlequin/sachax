@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>test</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>convertion Sacha Iphones</title>
+    <link rel="stylesheet" href="hypodrome.css">
 </head>
 <body>
-    <h1 id="texte">SIDOINE AI NUL</h1>
-    <img src="Image.png" alt="IL AI NUL">
+    <fieldset class ="Champ_de_texte">
+        <div class="gauche">
+            <p >Choisir la première unité de mesure</p>
+            <select name="choix 1" class = "selection" id="choix1">
+                <option value = "Sacha1">Sacha</option>
+                <option value = "Iphone1">Iphone</option>
+                <option value = "centi1">Centimètres</option>
+            </select>
+            <p></p>
+            <input type= "number" name= "" id="nb1"/>
+        </div>
+        <div class="droite">
+            <p class="encore_droite">Choisir la deuxième unité de mesure</p>
+            <select name="choix 2" class = "selection" id="choix2">
+                <option value = "Sacha1">Sacha</option>
+                <option value = "Iphone1">Iphone</option>
+                <option value = "centi1">Centimètres</option>
+            </select>
+        </div>
+    </fieldset>
+    <input type ="button" value="convertir" id="convertion" onclick="calcul()" class="Boutton"/>
+    <script type= "text/javascript">
+        function calcul(){
+            const taille = document.getElementById("nb1").value;
+            var nb1 = document.getElementById('choix1').value;
+            var nb2 = document.getElementById('choix2').value;
+            if(nb1 == "Sacha1"){
+                const taille_cm = taille * 156.5;
+                if(nb2 == "Sacha1"){
+                    const taille_fin = taille_cm / 156.5;
+                    alert(taille_fin);
+                }
+                else if(nb2 == "Iphone1"){
+                    let taille_fin = taille_cm / 14.6;
+                    alert(taille_fin);
+                }
+                else{
+                    let taille_fin = taille_cm / 1;
+                    alert(taille_fin);
+                }
+                }
+            else if(nb1 == "Iphone1"){
+                const taille_cm = taille * 14.6;
+                if(nb2 == "Sacha1"){
+                    const taille_fin = taille_cm / 156.5;
+                    alert(taille_fin);
+                }
+                else if(nb2 == "Iphone1"){
+                    let taille_fin = taille_cm / 14.6;
+                    alert(taille_fin);
+                }
+                else{
+                    let taille_fin = taille_cm / 1;
+                    alert(taille_fin);
+                    }
+                }
+                else{
+                    const taille_cm = taille;
+                    if(nb2 == "Sacha1"){
+                        const taille_fin = taille_cm / 156.5;
+                        alert(taille_fin);
+                    }
+                    else if(nb2 == "Iphone1"){
+                        let taille_fin = taille_cm / 14.6;
+                        alert(taille_fin);
+                    }
+                    else{
+                        let taille_fin = taille_cm / 1;
+                        alert(taille_fin);
+                    }
+                }
+            }
+        </script>
 </body>
 </html>
