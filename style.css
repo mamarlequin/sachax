@@ -1,8 +1,32 @@
-body{
-    text-align:center;
-    background-color:#000000;
+.Champ_de_texte{
+    background-color: #D1D1D1;
+    font-size: 13pt;
+    position: absolute;
+    top: 250px; 
+    left: 300px;
+    width: 700px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.selection{
+    font-size: 13pt;
 }
 
-#texte{
-    color:#ffffff;
+.gauche{
+    position: relative;
+    grid-column: 1;
+}
+
+.droite{
+    position: relative;
+    grid-column: 2;
+}
+.texte_droite{
+    text-align: right;
+}
+.Boutton{
+    position: absolute;
+    top:400px;
+    left:620px;
+    font-size: 15pt;
 }
