@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8" name ="viewport"content="width=device-width">
+    <meta charset="utf-8" name ="viewport"content="width=device-width",initial-scale=1>
     <title>convertion Sacha Iphones</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,9 +10,11 @@
         <div class="gauche">
             <p >Choisir la première unité de mesure</p>
             <select name="choix 1" class = "selection" id="choix1">
-                <option value = "Sacha1">Sacha</option>
-                <option value = "Iphone1">Iphone</option>
-                <option value = "centi1">Centimètres</option>
+                <option value = "Sacha">Sacha</option>
+                <option value = "Iphone">Iphone</option>
+                <option value = "centimètres">Centimètres</option>
+                <option value = "année lumière">Année lumière</option>
+                <option value = "fois la distance terre/lune">Terre/lune</option>
             </select>
             <p></p>
             <input type= "number" name= "" id="nb1"/>
@@ -20,45 +22,67 @@
         <div class="droite">
             <p class="encore_droite">Choisir la deuxième unité de mesure</p>
             <select name="choix 2" class = "selection" id="choix2">
-                <option value = "Sacha1">Sacha</option>
-                <option value = "Iphone1">Iphone</option>
-                <option value = "centi1">Centimètres</option>
+                <option value = "Sacha">Sacha</option>
+                <option value = "Iphone">Iphone</option>
+                <option value = "centimètres">Centimètres</option>
+                <option value = "année lumière">Année lumière</option>
+                <option value = "fois la distance terre/lune">Terre/lune</option>
             </select>
         </div>
     </fieldset>
     <input type ="button" value="convertir" id="convertion" onclick="calcul()" class="Boutton"/>
+
+
+
     <script type= "text/javascript">
-        function calcul_1(taille_c){
+        function calcul_1(taille_c, phrase){
             var nb2 = document.getElementById('choix2').value;
-            if(nb2 == "Sacha1"){
+            if(nb2 == "Sacha"){
                 const taille_fin = taille_c / 156.5;
-                alert(taille_fin);
+                alert(phrase + taille_fin + " " + nb2);
             }
-            else if(nb2 == "Iphone1"){
+            else if(nb2 == "Iphone"){
                 let taille_fin = taille_c / 14.6;
-                alert(taille_fin);
+                alert(phrase + taille_fin + " " + nb2);
             }
-            else{
+            else if(nb2 == "centimètres"){
                 let taille_fin = taille_c / 1;
-                alert(taille_fin);
+                alert(phrase + taille_fin + " " + nb2);
+            }
+            else if(nb2 == "année lumière"){
+                let taille_fin = taille_c /(1.057 * (10 ** 18));
+                alert(phrase + taille_fin + " " + nb2);
+            }
+            else if(nb1 == "fois la distance terre/lune"){
+                const taille_cm = taille_c  / 38440000000;
+                alert(phrase + taille_fin + " " + nb2);
             }
         }
         function calcul(){
             const taille = document.getElementById("nb1").value;
             var nb1 = document.getElementById('choix1').value;
-            if(nb1 == "Sacha1"){
+            if(nb1 == "Sacha"){
                 const taille_cm = taille * 156.5;
-                calcul_1(taille_cm);
-                }
-            else if(nb1 == "Iphone1"){
-                const taille_cm = taille * 14.6;
-                calcul_1(taille_cm);
-                }
-                else{
-                    const taille_cm = taille;
-                    calcul_1(taille_cm);
-                }
+                calcul_1(taille_cm, taille + " " + nb1 + " équivaut à ");
             }
-        </script>
+            else if(nb1 == "Iphone"){
+                const taille_cm = taille * 14.6;
+                calcul_1(taille_cm, taille + " " + nb1 + " équivaut à ");
+            }
+            else if(nb1 == "centimètres"){
+                const taille_cm = taille;
+                calcul_1(taille_cm, taille + " " + nb1 + " équivaut à ");
+            }
+            else if(nb1 == "année lumière"){
+                const taille_cm = taille  * (1.057 * (10 ** 18));
+                calcul_1(taille_cm, taille + " " + nb1 + " équivaut à ");
+            }
+            else if(nb1 == "fois la distance terre/lune"){
+                const taille_cm = taille  * 38440000000;
+                calcul_1(taille_cm, taille + " " + nb1 + " équivaut à ");
+            }
+
+        }
+    </script>
 </body>
 </html>
