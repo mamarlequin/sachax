@@ -16,6 +16,7 @@
                 <option value = "année lumière">Année lumière</option>
                 <option value = "fois la distance terre/lune">Terre/lune</option>
                 <option value = "Anouck">Anouck</option>
+                <option value = "Stylo Bic">Stylo Bic</option>
             </select>
             <p></p>
             <input type= "number" name= "" id="nb1"/>
@@ -29,6 +30,7 @@
                 <option value = "année lumière">Année lumière</option>
                 <option value = "fois la distance terre/lune">Terre/lune</option>
                 <option value = "Anouck">Anouck</option>
+                <option value = "Stylo Bic">Stylo Bic</option>
             </select>
         </div>
     </fieldset>
@@ -65,6 +67,10 @@
                 let taille_fin = taille_c / 187;
                 alert(phrase + taille_fin + " " + nb2);
             }
+            else if(nb2 == "Stylo Bic"){
+                let taille_fin = taille_c / 14.7;
+                alert(phrase + taille_fin + " " + nb2);
+            }
         }
         function calcul(){
             const taille = document.getElementById("nb1").value;
@@ -91,6 +97,10 @@
             }
             else if(nb1 == "Anouck"){
                 const taille_cm = taille * 187;
+                calcul_1(taille_cm, taille + " " + nb1 + " équivaut à ");
+            }
+            else if(nb1 == "Stylo Bic"){
+                const taille_cm = taille * 14.7;
                 calcul_1(taille_cm, taille + " " + nb1 + " équivaut à ");
             }
 
