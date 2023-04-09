@@ -15,6 +15,7 @@
                 <option value = "centimètres">Centimètres</option>
                 <option value = "année lumière">Année lumière</option>
                 <option value = "fois la distance terre/lune">Terre/lune</option>
+                <option value = "Anouck">Anouck</option>
             </select>
             <p></p>
             <input type= "number" name= "" id="nb1"/>
@@ -27,11 +28,14 @@
                 <option value = "centimètres">Centimètres</option>
                 <option value = "année lumière">Année lumière</option>
                 <option value = "fois la distance terre/lune">Terre/lune</option>
+                <option value = "Anouck">Anouck</option>
             </select>
         </div>
     </fieldset>
     <input type ="button" value="convertir" id="convertion" onclick="calcul()" class="Boutton"/>
-
+    <div class="easter_egg">
+        <p>Coucou</p>
+    </div>
 
 
     <script type= "text/javascript">
@@ -53,8 +57,12 @@
                 let taille_fin = taille_c /(1.057 * (10 ** 18));
                 alert(phrase + taille_fin + " " + nb2);
             }
-            else if(nb1 == "fois la distance terre/lune"){
-                const taille_cm = taille_c  / 38440000000;
+            else if(nb2 == "fois la distance terre/lune"){
+                const taille_fin = taille_c  / 38440000000;
+                alert(phrase + taille_fin + " " + nb2);
+            }
+            else if(nb2 == "Anouck"){
+                let taille_fin = taille_c / 187;
                 alert(phrase + taille_fin + " " + nb2);
             }
         }
@@ -79,6 +87,10 @@
             }
             else if(nb1 == "fois la distance terre/lune"){
                 const taille_cm = taille  * 38440000000;
+                calcul_1(taille_cm, taille + " " + nb1 + " équivaut à ");
+            }
+            else if(nb1 == "Anouck"){
+                const taille_cm = taille * 187;
                 calcul_1(taille_cm, taille + " " + nb1 + " équivaut à ");
             }
 
