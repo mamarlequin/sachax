@@ -37,3 +37,12 @@ body{
     width: 10%;
     font-size: 1vw;
 }
+.easter_egg{
+    color: white;
+    text-align: end;
+}
+
+.easter_egg:hover{
+    color:black;
+    text-align: end;
+}
